@@ -19,8 +19,37 @@
   }
 }
 
-body {
+/* body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0d0d0d;
+ background-image: radial-gradient(rgb(126, 48, 48) 1px, transparent 1px);
+  background-size: 24px 24px;
+} */
+/* Parallax fade for background dots */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+  background-color: #0d0d0d;
+ background-image: radial-gradient(rgb(126, 48, 48) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-position: 0 0;
+  transition: background-position 0.2s ease-out;
+}
+
+/* Subtle fade when scrolling */
+@keyframes scrollParallax {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 20px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.parallax-active {
+  animation: scrollParallax 10s linear infinite alternate;
 }
