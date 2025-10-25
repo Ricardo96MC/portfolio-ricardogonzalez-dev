@@ -1,3 +1,19 @@
+## Welcome to my portfolio 
+Here I am using a few libraries to display frontend development skills! These will also later link to my 
+other projects that are backend base! A way to bring everything together in one place. The tech used to start
+this project is as follows!
+
+| Layer         | Library      | Purpose                               |
+| ------------- | ------------ | ------------------------------------- |
+| **Framework** | Next.js      | Handles routes, rendering, deployment |
+| **UI Engine** | React        | Renders and manages components        |
+| **Styling**   | Tailwind CSS | Provides styling utilities            |
+| **Typing**    | TypeScript   | Adds static type checking             |
+
+
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
