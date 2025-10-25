@@ -12,7 +12,16 @@ this project is as follows!
 
 
 
+### To-Do List
 
+- [x] Create the site!
+- [ ] Add and populate basic pages, home page, about me, contact etc.
+- [ ] Link edgepingservice to the site (and the others...)
+- [ ] Create a dashboard for the service
+- [ ] Deploy via Vercel
+- [ ] Implement Spotify clone app into a page
+- [ ] Implemnt/port the react-native AI application I have developed to display promopting and AI integration (Grok)
+- [ ] For each project add a space that explains the tech used, backend/DB mostly and why, provide diagrams if applicable
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
