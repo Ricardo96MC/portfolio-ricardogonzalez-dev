@@ -1,3 +1,28 @@
+## Welcome to my portfolio 
+Here I am using a few libraries to display frontend development skills! These will also later link to my 
+other projects that are backend base! A way to bring everything together in one place. The tech used to start
+this project is as follows!
+
+| Layer         | Library      | Purpose                               |
+| ------------- | ------------ | ------------------------------------- |
+| **Framework** | Next.js      | Handles routes, rendering, deployment |
+| **UI Engine** | React        | Renders and manages components        |
+| **Styling**   | Tailwind CSS | Provides styling utilities            |
+| **Typing**    | TypeScript   | Adds static type checking             |
+
+
+
+### To-Do List
+
+- [x] Create the site!
+- [ ] Add and populate basic pages, home page, about me, contact etc.
+- [ ] Link edgepingservice to the site (and the others...)
+- [ ] Create a dashboard for the service
+- [ ] Deploy via Vercel
+- [ ] Implement Spotify clone app into a page
+- [ ] Implemnt/port the react-native AI application I have developed to display promopting and AI integration (Grok)
+- [ ] For each project add a space that explains the tech used, backend/DB mostly and why, provide diagrams if applicable
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
