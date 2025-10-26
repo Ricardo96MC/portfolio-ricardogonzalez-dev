@@ -47,8 +47,8 @@ const Navbar = () => {
                         <Link
                             key={link.href}
                             href={link.href}
-                            className={`text-lg tracking-wide transition ${pathname === link.href
-                                ? "text-[#B22222]"
+                            className={`text-lg tracking-wide px-4 py-2 transition-all duration-300 rounded-full hover:bg-[#B22222] ${pathname === link.href
+                                ? "text-[#B22222]  hover:text-white"
                                 : "text-gray-300 hover:text-white"
                                 }`}
                         >
