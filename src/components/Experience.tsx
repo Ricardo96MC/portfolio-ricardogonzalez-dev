@@ -1,13 +1,14 @@
 export default function Experience() {
     return (
         <section className="flex flex-col items-center justify-center text-left py-20  text-[#EAEAEA]">
-            <h1 className="text-5xl mb-12">
-                <a href="/experience" className="hover:text-[#B22222]">
-                    <span>Experience</span>
-                </a>
-            </h1>
+
 
             <div className="max-w-3xl w-[90%] md:w-[600px] lg:w-1/2 bg-[#1A1A1A] rounded-2xl shadow-md p-8 border border-[#2A2A2A]">
+                <h1 className="text-5xl mb-12 text-center">
+                    <a href="/experience" className="hover:text-[#B22222]">
+                        <span>Experience</span>
+                    </a>
+                </h1>
                 <h3 className="text-lg font-semibold mb-1">
                     Full Stack Engineer (Contract)
                 </h3>
