@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useState } from "react";
 import Link from "next/link";
@@ -8,23 +8,23 @@ import { X, Menu } from "lucide-react";
 
 const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Experience", href: "/experience" },
-    { name: "Projects", href: "/projects" },
-    { name: "Skills", href: "/skills" },
+    { name: "Experience", href: "/#experiences" },
+    { name: "Projects", href: "/#projects" },
+    { name: "Skills", href: "/#skills" },
     { name: "Contact", href: "/#connect" },
 ];
 
-const Navbar = () => {
+export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const pathname = usePathname();
 
     return (
         <nav className="fixed top-6 inset-x-0 flex justify-center z-50">
-            <div className="flex items-center justify-between 
+            <div className={`flex items-center justify-between 
                       w-fit px-8 py-3 rounded-full 
                       bg-[#0D0D0D]/90 border border-[#2A2A2A] 
                       backdrop-blur-md shadow-lg 
-                      transition-all duration-300">
+                      transition-all duration-300`.trim()}>
 
                 {/* Avatar */}
                 <div className="relative w-10 h-10 rounded-full overflow-hidden border border-[#B22222]/60">
@@ -78,7 +78,7 @@ const Navbar = () => {
                             onClick={() => setIsOpen(false)}
                             className={`text-base transition ${pathname === link.href
                                 ? "text-[#B22222]"
-                                : "text-gray-300 hover:text-white"
+                                : "text-gray-300 active:text-[#B22222]"
                                 }`}
                         >
                             {link.name}
@@ -89,5 +89,3 @@ const Navbar = () => {
         </nav>
     );
 };
-
-export default Navbar;
