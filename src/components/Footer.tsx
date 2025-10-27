@@ -5,6 +5,7 @@ import { MdEmail } from "react-icons/md";
 
 
 export default function Footer() {
+
     return (
         <section id="connect" className="max-w-5xl mx-auto px-6 py-16 text-center text-gray-300">
             <h2 className="text-[#B22222] text-xl font-medium mb-2 flex items-center justify-center gap-2">Wanna Connect?</h2>
@@ -40,7 +41,7 @@ export default function Footer() {
                 </a>
             </div>
             <p className="text-center mt-10 text-cs text-gray-600">
-                © {new Date().getFullYear()} Ricardo Gonzalez
+                © 2025 Ricardo Gonzalez
             </p>
         </section>
     )
