@@ -4,20 +4,26 @@ import { supabaseServer } from '@/lib/supabaseServerClient'
 
 export default async function Project() {
     /**
+     * We have updated our table,  now we are pulling a view
+     * that has pulled together job skills and projects from
+     * their own tables. 
+     * 
      * We have stored our Project information in Supabase,
      * so lets fetch them! Also we have images in a bucket
      * so we will access them via a signed url
      */
+
     const { data: projects, error } = await supabaseServer
-        .from('projects')
-        .select('*');
+        .from('project_with_skills')
+        .select("*");
 
     if (error) {
-        console.log("Error fetching projects from DB: ", error);
+        console.log("Error fetching Projects from DB: ", error);
         return (
-            <div>Error loading projects.</div>
+            <div>Error Loading Projects</div>
         )
     }
+
     const projectsWithImages = await Promise.all(
         projects.map(async (proj) => {
             const { data: signed } = await supabaseServer
@@ -30,7 +36,6 @@ export default async function Project() {
             }
         })
     );
-
 
     return (
         <section id="projects" className="flex flex-col items-center justify-center text-left text-[#EAEAEA]">
