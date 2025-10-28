@@ -19,11 +19,7 @@ export default function ProjectCard({ project }: ProjectCardDetailsProps) {
       border-[#2A2A2A] hover:border-[#B22222]/40 hover:shadow-md transition-all  w-full max-w-[1000px] mx-auto overflow-hidden">
             {/* Thumbnail Image */}
             <div
-                className="
-          relative shrink-0 
-          w-full h-56 sm:h-64 md:w-56 md:h-56 lg:w-64 lg:h-64 
-          2xl:w-80 2xl:h-80"
-            >
+                className="relative shrink-0 w-full h-56 sm:h-64 md:w-56 md:h-56 lg:w-64 lg:h-64 2xl:w-80 2xl:h-80 overflow-hidden rounded-xl">
                 {/* Ensure Image was found, handle if not */}
                 {project.signed_thumbnail ? (
                     <Image
@@ -60,9 +56,9 @@ export default function ProjectCard({ project }: ProjectCardDetailsProps) {
                 </div>
                 <p className="mb-3 text-[#A0A0A0]">{project.description}</p>
 
-                <ul className="flex flex-wrap gap-3 mt-3 text-sm text-[#B22222]">
-                    {project.skills.slice(0, 3).map((tech, index) => (
-                        <li key={index} className="bg-[#2A2A2A] rounded-md px-3 py-1 border border-[#3A3A3A]" >
+                <ul className="flex flex-wrap gap-3 mt-3 text-white">
+                    {project.skills.map((tech, index) => (
+                        <li key={index} className="bg-[#2A2A2A] rounded-md px-3 py-1 border border-[#3A3A3A] text-md" >
                             {tech}
                         </li>
                     ))}
