@@ -9,7 +9,7 @@ import { X, Menu } from "lucide-react";
 const navLinks = [
     { name: "Home", href: "/" },
     { name: "Experience", href: "/#experiences" },
-    { name: "Projects", href: "/#projects" },
+    { name: "Projects", href: "/projects" },
     { name: "Skills", href: "/#skills" },
     { name: "Contact", href: "/#connect" },
 ];
@@ -17,6 +17,7 @@ const navLinks = [
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const pathname = usePathname();
+
 
     return (
         <nav className="fixed top-6 inset-x-0 flex justify-center z-50">

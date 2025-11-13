@@ -1,26 +1,15 @@
-"use client";
+import Image from "next/image";
+import Link from "next/link";
+import GitHubButton from "./GitHubButton";
+import { ProjectInterface } from "@/types/project";
 
-import Image from 'next/image';
-import { FaGithub } from 'react-icons/fa6';
-
-interface ProjectCardDetailsProps {
-    project: {
-        project_name: string;
-        description: string;
-        skills: string[];
-        signed_thumbnail?: string | null;
-        github_url: string;
-    };
-}
-
-export default function ProjectCard({ project }: ProjectCardDetailsProps) {
+export default function ProjectCard({ project }: { project: ProjectInterface }) {
     return (
         <div className="flex flex-col md:flex-row items-center rounded-2xl shadow-sm bg-[#1A1A1A] border mb-10
-      border-[#2A2A2A] hover:border-[#B22222]/40 hover:shadow-md transition-all  w-full max-w-[1000px] mx-auto overflow-hidden">
-            {/* Thumbnail Image */}
-            <div
-                className="relative shrink-0 w-full h-56 sm:h-64 md:w-56 md:h-56 lg:w-64 lg:h-64 2xl:w-80 2xl:h-80 overflow-hidden rounded-xl">
-                {/* Ensure Image was found, handle if not */}
+      border-[#2A2A2A] hover:border-red-700/40 hover:shadow-md transition-all w-full max-w-[1000px] mx-auto"
+        >
+            {/* Thumbnail */}
+            <div className="relative shrink-0 w-full h-56 sm:h-64 md:w-56 md:h-56 lg:w-64 lg:h-64 2xl:w-80 2xl:h-80 overflow-hidden rounded-xl">
                 {project.signed_thumbnail ? (
                     <Image
                         src={project.signed_thumbnail}
@@ -28,7 +17,8 @@ export default function ProjectCard({ project }: ProjectCardDetailsProps) {
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1600px) 50vw, 33vw"
                         className="object-cover"
-                        priority
+                        priority={false}
+                    // unoptimized can be added for a temporary test: unoptimized
                     />
                 ) : (
                     <div className="w-full h-full bg-gray-700 flex items-center justify-center text-sm text-gray-400">
@@ -37,32 +27,35 @@ export default function ProjectCard({ project }: ProjectCardDetailsProps) {
                 )}
             </div>
 
-            {/* Details */}
-            <div className="flex flex-col justify-between p-6 text-left w-full">
-                <div>
-                    <h5 className="flex items-center gap-3 text-2xl font-bold text-[#EAEAEA] mb-3 flex-wrap">
-                        <span>{project.project_name}</span>
-                        {project.github_url && (
-                            <a
-                                href={project.github_url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="bg-[#2A2A2A] p-2 rounded-full hover:bg-[#B22222] transition shrink-0"
-                            >
-                                <FaGithub className="text-white text-lg" />
-                            </a>
-                        )}
-                    </h5>
-                </div>
-                <p className="mb-3 text-[#A0A0A0]">{project.description}</p>
+            {/* Project Info */}
+            <div className="flex flex-col flex-1 p-6 gap-4">
+                <div className="flex items-center gap-3 mb-3">
+                    <Link
+                        href={`/projects/${project.project_id}`}
+                        className="text-2xl font-bold text-[#EAEAEA] hover:text-[#B22222] transition-colors"
+                    >
+                        {project.project_name}
+                    </Link>
 
-                <ul className="flex flex-wrap gap-3 mt-3 text-white">
-                    {project.skills.map((tech, index) => (
-                        <li key={index} className="bg-[#2A2A2A] rounded-md px-3 py-1 border border-[#3A3A3A] text-md" >
-                            {tech}
-                        </li>
-                    ))}
-                </ul>
+                    {project.github_url && <GitHubButton href={project.github_url} />}
+                </div>
+
+                <p className="text-[#C0C0C0] text-sm sm:text-base leading-relaxed">
+                    {project.description || "No description provided."}
+                </p>
+
+                {project.skills && Array.isArray(project.skills) && (
+                    <div className="flex flex-wrap gap-2 mt-2">
+                        {project.skills.map((skill) => (
+                            <span
+                                key={skill}
+                                className="bg-[#2A2A2A] text-[#EAEAEA] text-xs px-3 py-1 rounded-full"
+                            >
+                                {skill}
+                            </span>
+                        ))}
+                    </div>
+                )}
             </div>
         </div>
     );
