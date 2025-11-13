@@ -6,7 +6,7 @@ import { MdEmail } from "react-icons/md";
 export default function Hero() {
     return (
         <section className="flex flex-col items-center hfit pt-[120px] md:pt-[120px] pb-12 bg-transparent text-[#EAEAEA]">
-            <div className="max-w-3xl w-[90%] md:w-[600px] lg:w-1/2 bg-[#1A1A1A] rounded-2xl shadow-md p-10 border border-[#2A2A2A]">
+            <div className="max-w-5xl w-[90%] md:w-[700px] lg:w-[60%] bg-[#1A1A1A] rounded-2xl shadow-md p-10 border border-[#2A2A2A]">
                 <h1 className="text-2xl font-bold text-[#B22222] mb-2">
                     Ricardo Gonzalez
                 </h1>

@@ -1,7 +1,7 @@
 export default function Experience() {
     return (
-        <section id="experiences" className="flex flex-col items-center justify-center text-left py-20  text-[#EAEAEA]">
-            <div className="max-w-3xl w-[90%] md:w-[600px] lg:w-1/2 bg-[#1A1A1A] rounded-2xl shadow-md p-8 border border-[#2A2A2A]">
+        <section id="experiences" className="flex flex-col items-center justify-center text-left py-20 text-[#EAEAEA]">
+            <div className="max-w-5xl w-[90%] md:w-[700px] lg:w-[60%] bg-[#1A1A1A] rounded-2xl shadow-md p-8 border border-[#2A2A2A]">
                 <h1 className="text-5xl mb-12 text-center">
                     <a href="/experience" className="hover:text-[#B22222]">
                         <span>Experience</span>
